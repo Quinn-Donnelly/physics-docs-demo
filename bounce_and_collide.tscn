@@ -1,11 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfet1cgypfom2"]
+[gd_scene load_steps=7 format=3 uid="uid://dfet1cgypfom2"]
 
 [ext_resource type="Script" uid="uid://bw30hkjw04le" path="res://player.gd" id="1_6jxo0"]
 [ext_resource type="Texture2D" uid="uid://cwhah7m5urcoe" path="res://assets/soldier1_gun.png" id="2_wnpta"]
 [ext_resource type="PackedScene" uid="uid://bucigqlq6k64b" path="res://wall.tscn" id="3_wrjm7"]
+[ext_resource type="Texture2D" uid="uid://bguqcw3nf1n7" path="res://icon.svg" id="4_jsg6b"]
 
 [sub_resource type="CircleShape2D" id="1"]
 radius = 22.0227
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ih6o"]
+size = Vector2(128, 128)
 
 [node name="BounceandCollide" type="Node"]
 
@@ -39,3 +43,36 @@ rotation = 1.5708
 [node name="Wall4" parent="Walls" instance=ExtResource("3_wrjm7")]
 position = Vector2(231.425, 302.296)
 rotation = 1.5708
+
+[node name="dummy" type="RigidBody2D" parent="."]
+position = Vector2(684, 350)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="dummy"]
+texture = ExtResource("4_jsg6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy"]
+shape = SubResource("RectangleShape2D_4ih6o")
+
+[node name="dummy2" type="RigidBody2D" parent="."]
+position = Vector2(441, 362)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="dummy2"]
+texture = ExtResource("4_jsg6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy2"]
+shape = SubResource("RectangleShape2D_4ih6o")
+
+[node name="dummy3" type="RigidBody2D" parent="."]
+position = Vector2(621, 180)
+gravity_scale = 0.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="dummy3"]
+texture = ExtResource("4_jsg6b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dummy3"]
+shape = SubResource("RectangleShape2D_4ih6o")
