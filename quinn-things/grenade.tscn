@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgfwrfmn807ox"]
+
+[ext_resource type="Texture2D" uid="uid://bguqcw3nf1n7" path="res://icon.svg" id="1_5h1bf"]
+[ext_resource type="Script" uid="uid://b2ejw30a5q06t" path="res://quinn-things/grenade.gd" id="1_tmncs"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tmncs"]
+bounce = 0.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5h1bf"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tmncs"]
+radius = 128.0
+
+[node name="Grenade" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 27
+physics_material_override = SubResource("PhysicsMaterial_tmncs")
+script = ExtResource("1_tmncs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -8)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("1_5h1bf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_5h1bf")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_tmncs")
